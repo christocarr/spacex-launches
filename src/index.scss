@@ -1,0 +1,261 @@
+@import './assets/stylesheet.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: $font-family;
+	color: $font-color;
+	margin: 0;
+}
+
+/*------------------------- 
+				HEADER STYLES
+---------------------------*/
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 1em 0 1em 1em;
+}
+
+.logo_container {
+	width: 70%;
+	.logo {
+		width: 120px;
+		height: 15px;
+		@include md {
+			width: 178.75px;
+			height: 22px;
+		}
+	}
+	h1 {
+		display: inline-block;
+		width: 50%;
+		font-size: 0.7rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin: 0;
+		margin-left: -0.7em;
+		line-height: 0;
+		@include md {
+			font-size: 1.25rem;
+		}
+	}
+}
+
+.refresh__button_container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 30%;
+	.refresh_button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 90px;
+		height: 29px;
+		color: white;
+		background-color: $primary-blue;
+		font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+		-webkit-border-top-left-radius: 21.5x;
+		-webkit-border-bottom-left-radius: 21.5px;
+		-moz-border-radius-topleft: 21.5px;
+		-moz-border-radius-bottomleft: 21.5px;
+		border-top-left-radius: 21.5px;
+		border-bottom-left-radius: 21.5px;
+		cursor: pointer;
+		@include md {
+			width: 134px;
+			height: 43px;
+		}
+		.reload_text {
+			display: none;
+			color: white;
+			font-size: 1rem;
+			font-weight: 700;
+			margin-right: 0.5em;
+			@include md {
+				display: inline-block;
+			}
+		}
+		.reload_icon {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+
+/*------------------------- 
+		MAIN CONTENT STYLES
+---------------------------*/
+
+main {
+	@include lg {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}
+
+.launch__image {
+	display: none;
+	margin-top: 5em;
+	@include lg {
+		display: block;
+	}
+}
+
+/*------------------------- 
+		LAUNCH ITEM STYLES
+---------------------------*/
+
+//filter and sort button styles
+
+.filter-sort__container {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 310px;
+	margin-bottom: 0.8em;
+	@include md {
+		width: 727px;
+	}
+}
+
+.sort_button {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 104px;
+	height: 29px;
+	background-color: $primary-blue;
+	color: white;
+	font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 700;
+	border-style: none;
+	@include md {
+		font-size: 1rem;
+		width: 156px;
+		height: 43px;
+	}
+}
+
+.filter_button {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 96px;
+	height: 29px;
+	margin-right: 0.5em;
+	background-color: $primary-blue;
+	color: white;
+	font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 700;
+	border-style: none;
+	@include md {
+		font-size: 1rem;
+		width: 144px;
+		height: 43px;
+	}
+}
+
+.launch__list_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin-top: 2.5em;
+	@include lg {
+		width: 50%;
+	}
+}
+
+.launch_item {
+	display: flex;
+	align-items: center;
+	width: 315px;
+	height: 54px;
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+	background-color: white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	:last-child {
+		margin-left: auto;
+	}
+	@include md {
+		width: 727px;
+		height: 81px;
+		padding: 0.5em 1em 0.5em 1em;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+}
+
+.launch_number {
+	margin-right: 0.5em;
+	font-size: 1rem;
+	@include md {
+		width: 76px;
+		margin-right: 1.5em;
+		font-size: 2.5rem;
+		font-weight: 500;
+	}
+}
+
+.launch_name {
+	width: 190px;
+	font-size: 0.9rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@include md {
+		width: 454px;
+		font-size: 2rem;
+		font-weight: 500;
+	}
+}
+
+.details_container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	p {
+		margin: 0;
+	}
+}
+
+.launch_date {
+	font-size: 0.7rem;
+	@include md {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+}
+
+.rocket_id {
+	font-size: 0.8rem;
+	@include md {
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+}
+
+.rocket_id::first-letter {
+	text-transform: uppercase;
+}
