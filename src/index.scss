@@ -59,9 +59,7 @@ body {
 		align-items: center;
 		width: 90px;
 		height: 29px;
-		color: white;
 		background-color: $primary-blue;
-		font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
 		-webkit-border-top-left-radius: 21.5x;
 		-webkit-border-bottom-left-radius: 21.5px;
 		-moz-border-radius-topleft: 21.5px;
@@ -124,7 +122,6 @@ main {
 		width: 727px;
 	}
 }
-
 .sort_button {
 	display: flex;
 	justify-content: space-evenly;
