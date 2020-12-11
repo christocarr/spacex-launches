@@ -7,16 +7,41 @@ import Filter from './Filter';
 function LaunchList() {
 	const { state } = useContext(AppContext);
 
+	const { launchData, selectedYear, sortType, isLoading } = state;
+
+	const items = launchData
+		.sort((a, b) =>
+			sortType === 'Ascending'
+				? a.launch_date_local > b.launch_date_local
+					? 1
+					: -1
+				: a.launch_date_local < b.launch_date_local
+				? 1
+				: -1
+		)
+		.filter((item) => {
+			if (selectedYear === '') {
+				return item;
+			} else {
+				return item.launch_year === selectedYear;
+			}
+		});
+
 	return (
 		<ul className="launch__list_container">
-			<div className="filter-sort__container">
-				<Sort />
-				<Filter />
-			</div>
-
-			{state.launchData.map((item) => (
-				<LaunchItem key={item.mission_name} item={item} />
-			))}
+			{isLoading ? (
+				<p>Loading...</p>
+			) : (
+				<div>
+					<div className="filter-sort__container">
+						<Sort />
+						<Filter />
+					</div>
+					{items.map((item) => (
+						<LaunchItem key={item.mission_name} item={item} />
+					))}
+				</div>
+			)}
 		</ul>
 	);
 }
