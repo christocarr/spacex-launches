@@ -49,42 +49,30 @@ body {
 	}
 }
 
-.refresh__button_container {
+.reload__button {
 	display: flex;
-	flex-direction: row-reverse;
-	width: 30%;
-	.refresh_button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 90px;
-		height: 29px;
-		background-color: $primary-blue;
-		-webkit-border-top-left-radius: 21.5x;
-		-webkit-border-bottom-left-radius: 21.5px;
-		-moz-border-radius-topleft: 21.5px;
-		-moz-border-radius-bottomleft: 21.5px;
-		border-top-left-radius: 21.5px;
-		border-bottom-left-radius: 21.5px;
-		cursor: pointer;
-		@include md {
-			width: 134px;
-			height: 43px;
-		}
-		.reload_text {
-			display: none;
-			color: white;
-			font-size: 1rem;
-			font-weight: 700;
-			margin-right: 0.5em;
-			@include md {
-				display: inline-block;
-			}
-		}
-		.reload_icon {
-			width: 20px;
-			height: 20px;
-		}
+	justify-content: space-evenly;
+	align-items: center;
+	width: 90px;
+	height: 29px;
+	background-color: $primary-blue;
+	-webkit-border-top-left-radius: 21.5x;
+	-webkit-border-bottom-left-radius: 21.5px;
+	-moz-border-radius-topleft: 21.5px;
+	-moz-border-radius-bottomleft: 21.5px;
+	border-top-left-radius: 21.5px;
+	border-bottom-left-radius: 21.5px;
+	border-style: none;
+	color: white;
+	font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 700;
+	border-style: none;
+	cursor: pointer;
+	@include md {
+		width: 134px;
+		height: 43px;
+		font-size: 1rem;
 	}
 }
 

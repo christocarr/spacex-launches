@@ -13,21 +13,19 @@ function Header() {
 				<img className="logo" src={logo} alt="logo" />
 				<h1>launches</h1>
 			</div>
-			<div className="refresh__button_container">
-				<div className="refresh_button" onClick={fetchData}>
-					<p className="reload_text">Reload Data</p>
-					<img
-						className="reload_icon"
-						srcSet={`
+			<button className="reload__button" onClick={fetchData}>
+				Reload Data
+				<img
+					className="reload_icon"
+					srcSet={`
 					${refreshSm} 1x,
 					${refreshMd} 2x,
 					${refreshLg} 3x
 					`}
-						src={refreshSm}
-						alt="reload data"
-					/>
-				</div>
-			</div>
+					src={refreshSm}
+					alt="reload data"
+				/>
+			</button>
 		</header>
 	);
 }
