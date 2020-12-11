@@ -141,6 +141,10 @@ main {
 	}
 }
 
+.filter__container {
+	position: relative;
+}
+
 .filter_button {
 	display: flex;
 	justify-content: space-evenly;
@@ -159,6 +163,32 @@ main {
 		width: 144px;
 		height: 43px;
 	}
+}
+
+.filter__list {
+	position: absolute;
+	list-style: none;
+	width: 96px;
+	padding: 0;
+	@include md {
+		width: 144px;
+	}
+}
+
+.filter__list_item {
+	color: white;
+	background-color: $primary-blue;
+	padding: 0.5em;
+	text-align: center;
+	cursor: pointer;
+	&:hover {
+		border: white;
+	}
+}
+
+.filter__select {
+	appearance: none;
+	display: none;
 }
 
 .launch__list_container {
