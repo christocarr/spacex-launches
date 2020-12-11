@@ -9,9 +9,10 @@ function LaunchItem({ item }) {
 			<div className="details_container">
 				<p className="launch_date">
 					{new Intl.DateTimeFormat('en-GB', {
-						weekday: 'short',
-						month: 'short',
-						year: 'numeric',
+						dateStyle: 'medium',
+						// weekday: 'narrow',
+						// month: 'short',
+						// year: 'numeric',
 					}).format(item.launch_date_unix * 1000)}
 				</p>
 				<p className="rocket_id">{item.rocket.rocket_id}</p>
