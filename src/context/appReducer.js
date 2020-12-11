@@ -1,4 +1,10 @@
-import { RELOAD_DATA, FILTER_DATA, SORT_DATA } from './appActions';
+import {
+	RELOAD_DATA,
+	FILTER_DATA,
+	SORT_DATA,
+	SET_ERROR,
+	SET_LOADING,
+} from './appActions';
 
 const reducer = (state, action) => {
 	switch (action.type) {
@@ -8,14 +14,26 @@ const reducer = (state, action) => {
 				launchData: action.payload,
 			};
 		case FILTER_DATA:
-			return {};
+			return {
+				...state,
+				selectedYear: action.payload,
+			};
 		case SORT_DATA:
 			return {
 				...state,
-				launchData: action.payload.sort((a, b) =>
-					a.launch_date_unix < b.launch_date_unix ? 1 : -1
-				),
+				sortType: action.payload,
 			};
+		case SET_ERROR:
+			return {
+				...state,
+				error: action.payload,
+			};
+		case SET_LOADING:
+			return {
+				...state,
+				isLoading: action.payload,
+			};
+
 		default:
 			return state;
 	}

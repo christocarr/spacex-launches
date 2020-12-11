@@ -1,18 +1,24 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import AppContext from './appContext';
 import reducer from './appReducer';
-import { RELOAD_DATA, FILTER_DATA, SORT_DATA } from './appActions';
+import {
+	RELOAD_DATA,
+	FILTER_DATA,
+	SORT_DATA,
+	SET_ERROR,
+	SET_LOADING,
+} from './appActions';
 
 function AppState({ children }) {
 	const initialState = {
 		launchData: [],
+		selectedYear: '',
+		sortType: 'Ascending',
 		isLoading: false,
 		error: '',
 	};
 
 	const [state, dispatch] = useReducer(reducer, initialState);
-	const [isLoading, setIsLoading] = useState(false);
-	const [error, setError] = useState('');
 
 	//Reload launch data
 	const reloadData = (data) => {
@@ -31,20 +37,38 @@ function AppState({ children }) {
 	};
 
 	//Sort launch data
-	const sortData = () => {
+	const sortData = (sortType) => {
 		dispatch({
 			type: SORT_DATA,
-			payload: state.launchData,
+			payload: sortType,
+		});
+	};
+
+	//Set error message
+	const setError = (error) => {
+		dispatch({
+			type: SET_ERROR,
+			payload: error,
+		});
+	};
+
+	//Toggle loading
+	const setLoading = (loading) => {
+		dispatch({
+			type: SET_LOADING,
+			payload: loading,
 		});
 	};
 
 	//Fetch launch data
 	const fetchData = async () => {
 		try {
+			setLoading(true);
 			const res = await fetch('https://api.spacexdata.com/v3/launches');
 			const data = await res.json();
 			reloadData(data);
-			setIsLoading(false);
+			filterData('');
+			setLoading(false);
 		} catch (error) {
 			setError(error);
 		}
