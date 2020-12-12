@@ -28,21 +28,27 @@ function LaunchList() {
 		});
 
 	return (
-		<ul className="launch__list_container">
+		<>
 			{isLoading ? (
 				<p>Loading...</p>
 			) : (
-				<>
+				<div className="wrapper">
 					<div className="filter-sort__container">
 						<Sort />
 						<Filter />
 					</div>
-					{items.map((item) => (
-						<LaunchItem key={item.mission_name} item={item} />
-					))}
-				</>
+					<ul
+						className="launch__list_container"
+						aria-live="polite"
+						aria-busy={isLoading}
+					>
+						{items.map((item) => (
+							<LaunchItem key={item.mission_name} item={item} />
+						))}
+					</ul>
+				</div>
 			)}
-		</ul>
+		</>
 	);
 }
 
