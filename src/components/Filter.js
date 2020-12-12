@@ -23,6 +23,14 @@ function Filter() {
 		filterData(year);
 	};
 
+	//handle year select with enter key
+	const handleKeyDown = (ev, year) => {
+		if (ev.keyCode === 13) {
+			filterData(year);
+			setOptionOpen(!optionOpen);
+		}
+	};
+
 	return (
 		<div className="filter__container">
 			<button
@@ -47,6 +55,8 @@ function Filter() {
 							className="filter__list_item"
 							onClick={() => onYearSelect(year)}
 							key={year}
+							tabIndex="0"
+							onKeyDown={(ev) => handleKeyDown(ev, year)}
 						>
 							{year}
 						</li>
