@@ -32,7 +32,7 @@ function LaunchList() {
 			{isLoading ? (
 				<p>Loading...</p>
 			) : (
-				<div>
+				<>
 					<div className="filter-sort__container">
 						<Sort />
 						<Filter />
@@ -40,7 +40,7 @@ function LaunchList() {
 					{items.map((item) => (
 						<LaunchItem key={item.mission_name} item={item} />
 					))}
-				</div>
+				</>
 			)}
 		</ul>
 	);
