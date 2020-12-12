@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/spacex-launches/static/css/main.0f88b50a.chunk.css",
+    "main.js": "/spacex-launches/static/js/main.b5e9f822.chunk.js",
+    "main.js.map": "/spacex-launches/static/js/main.b5e9f822.chunk.js.map",
+    "runtime-main.js": "/spacex-launches/static/js/runtime-main.5c065aa7.js",
+    "runtime-main.js.map": "/spacex-launches/static/js/runtime-main.5c065aa7.js.map",
+    "static/js/2.bdc5cd3b.chunk.js": "/spacex-launches/static/js/2.bdc5cd3b.chunk.js",
+    "static/js/2.bdc5cd3b.chunk.js.map": "/spacex-launches/static/js/2.bdc5cd3b.chunk.js.map",
+    "index.html": "/spacex-launches/index.html",
+    "static/css/main.0f88b50a.chunk.css.map": "/spacex-launches/static/css/main.0f88b50a.chunk.css.map",
+    "static/js/2.bdc5cd3b.chunk.js.LICENSE.txt": "/spacex-launches/static/js/2.bdc5cd3b.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/spacex-launches/static/media/BrandonGrotesque-RegularItalic.78a0e531.woff2",
+    "static/media/launch-home.b539e3f9.png": "/spacex-launches/static/media/launch-home.b539e3f9.png",
+    "static/media/launch-home@2x.2ac07a63.png": "/spacex-launches/static/media/launch-home@2x.2ac07a63.png",
+    "static/media/launch-home@3x.8f2f8d9e.png": "/spacex-launches/static/media/launch-home@3x.8f2f8d9e.png",
+    "static/media/spacex-logo.e755fcbf.png": "/spacex-launches/static/media/spacex-logo.e755fcbf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c065aa7.js",
+    "static/js/2.bdc5cd3b.chunk.js",
+    "static/css/main.0f88b50a.chunk.css",
+    "static/js/main.b5e9f822.chunk.js"
+  ]
+}
