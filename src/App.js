@@ -7,25 +7,23 @@ import imgLg from './assets/img/launch-home@3x.png';
 
 function App() {
 	return (
-		<div>
-			<AppState>
-				<Header />
-				<main>
-					<div className="launch__image">
-						<img
-							srcSet={`
+		<AppState>
+			<Header />
+			<main>
+				<div className="launch__image">
+					<img
+						srcSet={`
 						${imgSm} 1x,
 						${imgMd} 2x,
 						${imgLg} 3x
 					`}
-							src={imgSm}
-							alt="SpaceX launch"
-						/>
-					</div>
-					<LaunchList />
-				</main>
-			</AppState>
-		</div>
+						src={imgSm}
+						alt="SpaceX launch"
+					/>
+				</div>
+				<LaunchList />
+			</main>
+		</AppState>
 	);
 }
 
