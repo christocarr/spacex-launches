@@ -89,7 +89,7 @@ main {
 
 .launch__image {
 	display: none;
-	margin-top: 5em;
+	margin-top: em;
 	@include lg {
 		display: block;
 	}
@@ -99,12 +99,23 @@ main {
 		LAUNCH ITEM STYLES
 ---------------------------*/
 
+.wrapper {
+	width: 310px;
+	margin: 2em auto 0 auto;
+	@include md {
+		width: 727px;
+	}
+	@include lg {
+		margin: 2em 0 0 0;
+	}
+}
+
 //filter and sort button styles
 
 .filter-sort__container {
 	display: flex;
 	flex-direction: row-reverse;
-	width: 310px;
+	// width: 310px;
 	margin-bottom: 0.8em;
 	@include md {
 		width: 727px;
@@ -158,6 +169,7 @@ main {
 	list-style: none;
 	width: 96px;
 	padding: 0;
+	margin: 0;
 	@include md {
 		width: 144px;
 	}
@@ -174,11 +186,6 @@ main {
 	}
 }
 
-.filter__select {
-	appearance: none;
-	display: none;
-}
-
 .launch__list_container {
 	display: flex;
 	flex-direction: column;
@@ -186,10 +193,6 @@ main {
 	align-items: center;
 	list-style: none;
 	padding: 0;
-	margin-top: 2.5em;
-	@include lg {
-		width: 50%;
-	}
 }
 
 .launch_item {
