@@ -24,7 +24,11 @@ function Sort() {
 	};
 
 	return (
-		<button className="sort_button" onClick={handleSort}>
+		<button
+			className="sort_button"
+			onClick={handleSort}
+			aria-label="Sort ascending and descending"
+		>
 			Sort {sortType}
 			<img
 				srcSet={`

@@ -36,6 +36,7 @@ function Filter() {
 			<button
 				className="filter_button"
 				onClick={() => setOptionOpen(!optionOpen)}
+				aria-label="Filter launch data by year"
 			>
 				Filter by Year
 				<img

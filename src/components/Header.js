@@ -13,7 +13,11 @@ function Header() {
 				<img className="logo" src={logo} alt="logo" />
 				<h1>launches</h1>
 			</div>
-			<button className="reload__button" onClick={fetchData}>
+			<button
+				className="reload__button"
+				onClick={fetchData}
+				aria-label="Sort ascending and descending"
+			>
 				Reload Data
 				<img
 					className="reload_icon"
