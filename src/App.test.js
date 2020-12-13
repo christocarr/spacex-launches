@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react';
+import { render } from '@testing-library/react';
+import Header from './components/Header';
+import AppContext from './context/appContext';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<Header />', () => {
+	it('renders a button', () => {
+		const { getByRole } = render(
+			<AppContext.Provider value={false}>
+				<Header />
+			</AppContext.Provider>
+		);
+
+		const reloadButton = getByRole('button');
+		expect(reloadButton).toBeInTheDocument();
+	});
 });
