@@ -30,7 +30,7 @@ function LaunchList() {
 	return (
 		<>
 			{isLoading ? (
-				<p>Loading...</p>
+				<p className="loading">Loading...</p>
 			) : (
 				<div className="wrapper">
 					<div className="filter-sort__container">
