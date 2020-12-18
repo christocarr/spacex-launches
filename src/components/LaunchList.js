@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Route, Link } from 'react-router-dom';
 import AppContext from '../context/appContext';
 import Sort from './Sort';
 import LaunchItem from './LaunchItem';
@@ -27,6 +28,8 @@ function LaunchList() {
 			}
 		});
 
+	console.log(items);
+
 	return (
 		<>
 			{isLoading ? (
@@ -43,7 +46,9 @@ function LaunchList() {
 						aria-busy={isLoading}
 					>
 						{items.map((item) => (
-							<LaunchItem key={item.mission_name} item={item} />
+							<Link to={`/launch/${item.flight_number}`}>
+								<LaunchItem key={item.mission_name} item={item} />
+							</Link>
 						))}
 					</ul>
 				</div>
