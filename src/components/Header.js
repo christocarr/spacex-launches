@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import AppContext from '../context/appContext';
 import logo from '../assets/spacex-logo.png';
 import refreshSm from '../assets/icon/refresh.png';
@@ -13,23 +14,26 @@ function Header() {
 				<img className="logo" src={logo} alt="logo" />
 				<h1>launches</h1>
 			</div>
-			<button
-				className="reload__button"
-				onClick={fetchData}
-				aria-label="Sort ascending and descending"
-			>
-				Reload Data
-				<img
-					className="reload_icon"
-					srcSet={`
+
+			<Link exact to="/">
+				<button
+					className="reload__button"
+					onClick={fetchData}
+					aria-label="Sort ascending and descending"
+				>
+					Reload Data
+					<img
+						className="reload_icon"
+						srcSet={`
 					${refreshSm} 1x,
 					${refreshMd} 2x,
 					${refreshLg} 3x
 					`}
-					src={refreshSm}
-					alt="reload data"
-				/>
-			</button>
+						src={refreshSm}
+						alt="reload data"
+					/>
+				</button>
+			</Link>
 		</header>
 	);
 }
