@@ -8,7 +8,10 @@ function LaunchPage() {
 	let { id } = useParams();
 
 	const [launchItem, setLaunchItem] = useState({
+		flight_number: '',
 		mission_name: '',
+		launch_date_unix: 10000,
+		details: '',
 	});
 
 	useEffect(() => {
@@ -21,7 +24,24 @@ function LaunchPage() {
 
 	console.log(launchItem);
 
-	return <div>{launchItem.mission_name}</div>;
+	return (
+		<div className="wrapper">
+			<div className="launch__page_item">
+				<div className="launch__page_item-header">
+					<h3>{`#${launchItem.flight_number} ${launchItem.mission_name}`}</h3>
+					<p className="launch_date">
+						{new Intl.DateTimeFormat('en-GB', {
+							dateStyle: 'medium',
+							// weekday: 'narrow',
+							// month: 'short',
+							// year: 'numeric',
+						}).format(launchItem.launch_date_unix * 1000)}
+					</p>
+				</div>
+				<p>{launchItem.details}</p>
+			</div>
+		</div>
+	);
 }
 
 export default LaunchPage;
