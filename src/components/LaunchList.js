@@ -28,8 +28,6 @@ function LaunchList() {
 			}
 		});
 
-	console.log(items);
-
 	return (
 		<>
 			{isLoading ? (
@@ -45,9 +43,9 @@ function LaunchList() {
 						aria-live="polite"
 						aria-busy={isLoading}
 					>
-						{items.map((item) => (
-							<Link to={`/launch/${item.flight_number}`}>
-								<LaunchItem key={item.mission_name} item={item} />
+						{items.map((item, index) => (
+							<Link to={`/launch/${item.flight_number}`} key={index}>
+								<LaunchItem item={item} />
 							</Link>
 						))}
 					</ul>
