@@ -15,7 +15,7 @@ function Header() {
 				<h1>launches</h1>
 			</div>
 
-			<Link exact to="/">
+			<Link to="/">
 				<button
 					className="reload__button"
 					onClick={fetchData}
