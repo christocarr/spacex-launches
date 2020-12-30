@@ -11,6 +11,14 @@ function LaunchPage() {
 		flight_number: '',
 		mission_name: '',
 		launch_date_unix: 10000,
+		launch_site: {
+			site_name_long: '',
+		},
+		rocket: {
+			rocket_name: '',
+			rocket_type: '',
+		},
+		launch_success: true,
 		details: '',
 	});
 
@@ -38,7 +46,15 @@ function LaunchPage() {
 						}).format(launchItem.launch_date_unix * 1000)}
 					</p>
 				</div>
+				<p>Launch site: {launchItem.launch_site.site_name_long}</p>
+				<p>
+					Rocket name: {launchItem.rocket.rocket_name} Rocket type:{' '}
+					{launchItem.rocket.rocket_type}
+				</p>
 				<p>{launchItem.details}</p>
+				{!launchItem.launch_success && (
+					<p>Reason: {launchItem.launch_failure_details.reason}.</p>
+				)}
 			</div>
 		</div>
 	);
